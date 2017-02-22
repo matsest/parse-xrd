@@ -1,4 +1,4 @@
-# parse_xrd.py
+# parse-xrd
 Parses .uxd-files from a 2theta-omega scan from a Bruker D8 XRD system.
 
 
@@ -6,7 +6,7 @@ Parses .uxd-files from a 2theta-omega scan from a Bruker D8 XRD system.
 
 Use from a command line prompt as
 
-    $ parse_xrd.py <input_file.uxd>
+    $ parse-xrd.py <input_file.uxd>
 
 This creates a output file `<input_file-out.csv>` in the format
 
@@ -16,3 +16,7 @@ This creates a output file `<input_file-out.csv>` in the format
     39.4,15
 
 with all the (2theta,counts)-values in the file.
+
+For ease of use, add the folder destination to your $PATH, so you can use it
+in any directory.
+
