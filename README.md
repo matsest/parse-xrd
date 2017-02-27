@@ -24,6 +24,9 @@ e.g.
 
 which again will create output files with individual names.
 
-For ease of use, add the folder destination to your $PATH, so you can use it
-in any directory.
+## Install
 
+Clone the repo or download the `parse-xrd.py` file and add it to your $PATH. 
+
+Example: Add it to `/usr/local/bin/` as parse-xrd (no extension necessary) and
+use it from any directory.
