@@ -17,6 +17,13 @@ This creates a output file `<input_file-out.csv>` in the format
 
 with all the (2theta,counts)-values in the file.
 
+It is also possible to use a wildcard to parse all valid files in a given directory,
+e.g.
+
+    $ parse-xrd.py *.uxd
+
+which again will create output files with individual names.
+
 For ease of use, add the folder destination to your $PATH, so you can use it
 in any directory.
 
