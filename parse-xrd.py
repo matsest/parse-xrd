@@ -45,30 +45,32 @@ def count_rows(csv_file):
 
 def main():
     try:
-        input_file = sys.argv[1]
+        input_files = sys.argv[1:]
 
+    except IndexError:
+        print "No input files given!"
+        sys.exit(1)
+
+    for input_file in sys.argv[1:]:
+        
         if not input_file.lower().endswith(".uxd"):
             print "Invalid file format. Use .uxd-files!"
             sys.exit(1)
 
         output_file = os.path.splitext(os.path.basename(input_file))[0] + "-out.csv"
 
-    except IndexError:
-        print "No input file given!"
-        sys.exit(1)
+        try:
+            two_theta, intensity = read_xrd_data(input_file)
+            write_xrd_data(output_file, two_theta, intensity)
 
-    try:
-        two_theta, intensity = read_xrd_data(input_file)
-        write_xrd_data(output_file, two_theta, intensity)
+            print "XRD data printed successfully!"
+            print "From: ", input_file
+            print "To: ", output_file
+            print "Datapoints: ", count_rows(output_file), "\n"
 
-        print "XRD data printed sucessfully!"
-        print "From: ", input_file
-        print "To: ", output_file
-        print "Datapoints: ", count_rows(output_file)
-
-    except:
-        print "Something went wrong. Invalid input file?"
-        sys.exit(1)
+        except:
+            print "Something went wrong. Invalid input file?"
+            sys.exit(1)
 
 if __name__ == "__main__":
     main()
