@@ -31,4 +31,4 @@ which will create output files with individual names.
 
 ## Licence
 
-* [MIT Licence](LICENCE)
+* [MIT License](LICENSE)
