@@ -1,14 +1,19 @@
 # parse-xrd
-Parses .uxd-files from a 2theta-omega scan from a Bruker D8 XRD system.
 
+> Parses .uxd-files from a 2theta-omega scan from a Bruker D8 XRD system.
+
+## Install
+
+* Clone this repository: `git clone git@github.com:matsest/parse-xrd.git`
+* Append the path to the repo to your `$PATH`: `echo 'export PATH=$PATH:<repo-dir-path>' >> ~/.bashrc`
 
 ## Usage
 
 Use from a command line prompt as
 
-    $ parse-xrd.py <input_file.uxd>
+    $ parse-xrd <input_file.uxd>
 
-This creates a output file `<input_file-out.csv>` in the format
+This creates a output file `<input_file>out.csv` in the format
 
     2theta,counts
     39.2,10
@@ -20,13 +25,10 @@ with all the (2theta,counts)-values in the file.
 It is also possible to use a wildcard to parse all valid files in a given directory,
 e.g.
 
-    $ parse-xrd.py *.uxd
+    $ parse-xrd *.uxd
 
-which again will create output files with individual names.
+which will create output files with individual names.
 
-## Install
+## Licence
 
-Clone the repo or download the `parse-xrd.py` file and add it to your $PATH. 
-
-Example: Add it to `/usr/local/bin/` as parse-xrd (no extension necessary) and
-use it from any directory.
+* [MIT Licence](LICENCE)
